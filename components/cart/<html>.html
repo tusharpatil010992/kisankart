@@ -1,0 +1,36 @@
+<html>
+    <body>
+        <Input type="text" name="username" />
+        <Input type="password" name="password" />
+        <Button onClick="" classNameTxt="" color="blue">Login</Button>
+        <Button onClick="" classNameTxt="" color="red">clear</Button>
+    </body>
+</html>
+
+
+Babel jsx/tsx -> js 
+
+
+Layout.jsx 
+
+const Layout = (props) => {
+    return <html>
+    <body>
+        {props.children}
+        </body>
+        </html>
+}
+
+
+
+Input.jsx
+
+const Input =(props)=> {
+    return <input type={props.type} name={props.name} />
+}
+
+Button.jsx
+
+const Button =(props)=> {
+return <button style={{color: props.color}} className={} onClick={props.onClick}>{props.children}</button>
+}
