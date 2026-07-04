@@ -7,7 +7,7 @@ Tracks what's been implemented against `E-commerce_development_plan.md`.
 ## Done
 
 - **Project scaffold**: Next.js (App Router, JavaScript, Tailwind v4, ESLint) via `create-next-app`.
-- **Styling**: Brand colors (forest/light/sage green, light gray) defined in `app/globals.css` via Tailwind v4's `@theme` — no `tailwind.config.js` needed in v4.
+- **Styling**: Brand colors (forest/light/sage green, light gray) defined in `app/globals.css` via Tailwind v4's `@theme` — no `tailwind.config.js` needed in v4. Modernized pass (green primary palette, Inter/Sora typography, gradients, mobile/tablet-responsive admin + cart + navbar) documented in `docs/design-system.md`.
 - **Supabase setup**: `lib/supabase/{client,server,admin}.js` using `@supabase/ssr`. SQL schema + RLS policies + realtime publication in `docs/schema.sql` (run manually in the Supabase SQL editor).
 - **Auth**: Email/password admin login (`app/admin/login`), session refresh + route protection in `proxy.js` (redirects unauthenticated users away from `/admin/*`). Named `proxy.js` not `middleware.js` — Next.js 16 renamed the convention (`middleware` is deprecated in favor of `proxy`, same API).
 - **Server actions**: `app/actions/{products,categories,orders,auth}.js` — CRUD + checkout + login/logout, with Zod validation (`lib/validators.js`).

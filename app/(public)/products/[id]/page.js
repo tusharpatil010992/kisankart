@@ -15,7 +15,7 @@ export default async function ProductDetailPage({ params }) {
 
   return (
     <div className="grid gap-8 md:grid-cols-2">
-      <div className="aspect-square w-full overflow-hidden rounded-lg bg-light-gray">
+      <div className="aspect-square w-full overflow-hidden rounded-2xl bg-light-gray">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={product.image_url || '/placeholder.svg'}

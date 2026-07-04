@@ -1,12 +1,5 @@
-import AdminNav from '@/components/admin/AdminNav';
+import AdminShell from '@/components/admin/AdminShell';
 
 export default function DashboardLayout({ children }) {
-  return (
-    <div className="flex min-h-screen">
-      <aside className="w-56 flex-shrink-0">
-        <AdminNav />
-      </aside>
-      <main className="flex-1 bg-light-gray p-8">{children}</main>
-    </div>
-  );
+  return <AdminShell>{children}</AdminShell>;
 }

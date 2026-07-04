@@ -15,8 +15,10 @@ export default function CategoryFilter({ categories, activeCategoryId, query }) 
       <Link
         href={buildHref(null)}
         className={clsx(
-          'rounded-full px-3 py-1 text-sm font-medium',
-          !activeCategoryId ? 'bg-forest-green text-white' : 'bg-sage-green/40 text-foreground hover:bg-light-green'
+          'rounded-full px-3.5 py-1.5 text-sm font-medium transition-colors',
+          !activeCategoryId
+            ? 'bg-gradient-green-strong text-white'
+            : 'bg-sage-green/40 text-foreground hover:bg-light-green'
         )}
       >
         All
@@ -26,9 +28,9 @@ export default function CategoryFilter({ categories, activeCategoryId, query }) 
           key={category.id}
           href={buildHref(category.id)}
           className={clsx(
-            'rounded-full px-3 py-1 text-sm font-medium',
+            'rounded-full px-3.5 py-1.5 text-sm font-medium transition-colors',
             activeCategoryId === category.id
-              ? 'bg-forest-green text-white'
+              ? 'bg-gradient-green-strong text-white'
               : 'bg-sage-green/40 text-foreground hover:bg-light-green'
           )}
         >

@@ -36,13 +36,28 @@ Build a production-ready, beginner-friendly agricultural e-commerce platform wit
 | Dark Gray | #333333 | Text | Body text, headings |
 | Light Gray | #F5F5F5 | Subtle backgrounds | Section backgrounds |
 
+### Gradient Colors (White to Green)
+| Gradient | Colors | Purpose | Usage |
+|----------|--------|---------|-------|
+| Soft Gradient | White → Sage Green | Backgrounds | Hero sections, card backgrounds |
+| Medium Gradient | White → Light Green | Interactive | Hover states, overlays |
+| Strong Gradient | White → Forest Green | CTAs & Accents | Buttons, headers, prominent sections |
+
+### Professional Typography
+- **Font Family (Primary)**: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif
+- **Font Family (Heading)**: "Poppins", Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif
+- **Headings**: Poppins (bold, 600-700 weight)
+- **Body Text**: Inter (regular, 400-500 weight)
+- **Accent Text**: Poppins (semi-bold, 600 weight)
+
 ### Design Guidelines
 - **Background**: Clean white (#FFFFFF) as primary
 - **Accents**: Forest Green for primary actions and key elements
 - **Interactive Elements**: Light Green for hover/active states
 - **Text**: Dark Gray for readability on white backgrounds
 - **Borders**: Sage Green for subtle separations
-- **Overall Feel**: Fresh, natural, trustworthy (agriculture-focused)
+- **Gradients**: Use white-to-green gradients for depth and visual hierarchy
+- **Overall Feel**: Fresh, natural, trustworthy, modern, professional (agriculture-focused)
 
 ### Tailwind CSS Configuration
 ```javascript
@@ -50,6 +65,10 @@ Build a production-ready, beginner-friendly agricultural e-commerce platform wit
 module.exports = {
   theme: {
     extend: {
+      fontFamily: {
+        'sans': ['Inter', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'sans-serif'],
+        'heading': ['"Poppins"', 'Inter', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'sans-serif'],
+      },
       colors: {
         'forest-green': '#1B5E20',
         'light-green': '#81C784',
@@ -57,10 +76,21 @@ module.exports = {
         'primary': '#1B5E20',
         'secondary': '#81C784',
       },
+      backgroundImage: {
+        'gradient-green-soft': 'linear-gradient(135deg, #FFFFFF 0%, #A5D6A7 100%)',
+        'gradient-green-medium': 'linear-gradient(135deg, #FFFFFF 0%, #81C784 100%)',
+        'gradient-green-strong': 'linear-gradient(135deg, #FFFFFF 0%, #1B5E20 100%)',
+      },
     },
   },
 }
 ```
+
+### Font Weight Reference
+- **Regular**: 400
+- **Medium**: 500
+- **Semi-bold**: 600
+- **Bold**: 700
 
 ---
 
@@ -313,27 +343,27 @@ ecommerce-app/
 - [ ] Create validation utilities
 
 ### Phase 4: Public Storefront
-- [ ] Create layout and navigation (white background with green accents)
-- [ ] Build home page with hero section (green gradient background, white text)
-- [ ] Create product grid component (white cards with green hover effects)
-- [ ] Implement product search (green search button, white input)
+- [ ] Create layout and navigation (white background with green accents, professional fonts)
+- [ ] Build home page with hero section (white-to-green gradient, white text, Poppins heading)
+- [ ] Create product grid component (white cards with gradient green hover effects, Inter body)
+- [ ] Implement product search (green search button with gradient, white input, professional fonts)
 - [ ] Implement category filtering (sage green badges, light green active states)
-- [ ] Create product details page (white layout with green highlights)
-- [ ] Implement real-time product updates (smooth transitions with green indicators)
+- [ ] Create product details page (white layout with gradient green highlights, typography hierarchy)
+- [ ] Implement real-time product updates (smooth transitions with gradient green indicators)
 
 ### Phase 5: Shopping Cart
 - [ ] Create cart state management (localStorage + Context)
-- [ ] Build cart page UI (white background with green accents)
-- [ ] Implement quantity controls (green +/- buttons)
-- [ ] Create order summary (sage green background section)
-- [ ] Add checkout form (green submit button with hover effects)
+- [ ] Build cart page UI (white background with gradient green accents, professional fonts)
+- [ ] Implement quantity controls (gradient green +/- buttons with professional styling)
+- [ ] Create order summary (gradient sage green background section, typography hierarchy)
+- [ ] Add checkout form (gradient green submit button with hover effects, Inter fonts)
 
 ### Phase 6: Admin Panel
-- [ ] Create admin layout with authentication check (white layout with green sidebar)
-- [ ] Build admin dashboard (green header with stats cards on white background)
-- [ ] Create product management (CRUD) (green action buttons, white cards)
-- [ ] Create category management (CRUD) (sage green badges, green edit/delete buttons)
-- [ ] Add admin navigation (green navigation bar, light green active states)
+- [ ] Create admin layout with authentication check (white layout with gradient green sidebar, Poppins)
+- [ ] Build admin dashboard (gradient green header with stats cards on white background, professional fonts)
+- [ ] Create product management (CRUD) (gradient green action buttons, white cards, Inter body text)
+- [ ] Create category management (CRUD) (sage green badges, gradient green edit/delete buttons)
+- [ ] Add admin navigation (gradient green navigation bar, light green active states, typography hierarchy)
 
 ### Phase 7: Backend Operations
 - [ ] Create product Server Actions
@@ -819,42 +849,58 @@ vercel --prod
 
 #### Button Styling
 ```jsx
-// Primary Button (Forest Green)
-<button className="bg-forest-green text-white hover:bg-light-green ...">
+// Primary Button (Forest Green Gradient)
+<button className="bg-gradient-green-strong text-white font-semibold hover:shadow-lg transition-all ...">
   Action
 </button>
 
 // Secondary Button (Sage Green)
-<button className="bg-sage-green text-dark-gray hover:bg-light-green ...">
+<button className="bg-sage-green text-dark-gray font-medium hover:bg-light-green ...">
   Secondary Action
 </button>
 ```
 
 #### Card Components
 ```jsx
-// Product Card
-<div className="bg-white border border-sage-green rounded-lg shadow-sm hover:shadow-md ...">
-  {/* White card with subtle sage green border */}
+// Product Card (Professional Spacing)
+<div className="bg-white border border-sage-green rounded-lg shadow-sm hover:shadow-md hover:border-light-green transition-all ...">
+  <h3 className="font-heading font-bold text-forest-green">Product Name</h3>
+  <p className="font-sans text-dark-gray">Description text</p>
 </div>
 ```
 
 #### Navigation Elements
 ```jsx
-// Active Navigation Item
-<nav className="bg-forest-green">
-  <a className="text-white hover:bg-light-green ...">
+// Navigation (Gradient Green Background)
+<nav className="bg-gradient-green-strong">
+  <a className="text-white font-heading font-semibold hover:bg-light-green ...">
     Navigation Item
   </a>
 </nav>
 ```
 
+#### Heading Hierarchy
+```jsx
+// H1 - Page Title (Poppins Bold)
+<h1 className="font-heading font-bold text-4xl text-forest-green">Page Title</h1>
+
+// H2 - Section Header (Poppins SemiBold)
+<h2 className="font-heading font-semibold text-2xl text-forest-green">Section Title</h2>
+
+// H3 - Subsection (Poppins SemiBold)
+<h3 className="font-heading font-semibold text-lg text-forest-green">Subsection</h3>
+
+// Body Text (Inter Regular)
+<p className="font-sans font-normal text-base text-dark-gray">Body text content</p>
+```
+
 #### Form Elements
 ```jsx
-// Input with Green Accent
-<input className="border-sage-green focus:border-forest-green focus:ring-forest-green ..." />
+// Input with Green Gradient Focus
+<input className="border-sage-green focus:border-forest-green focus:ring-2 focus:ring-light-green font-sans ..." />
 
-// Submit Button
-<button className="bg-forest-green text-white hover:bg-light-green ..." />
+// Submit Button (Gradient)
+<button className="bg-gradient-green-strong text-white font-semibold hover:shadow-lg ..." />
 ```
 
 ---

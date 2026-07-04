@@ -17,10 +17,10 @@ export default function LoginPage() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-light-gray px-4">
+    <div className="flex min-h-screen items-center justify-center bg-gradient-green-medium px-4">
       <form
         action={handleSubmit}
-        className="flex w-full max-w-sm flex-col gap-4 rounded-lg bg-white p-8 shadow-sm"
+        className="flex w-full max-w-sm flex-col gap-4 rounded-lg bg-white p-8 shadow-md"
       >
         <h1 className="text-xl font-semibold text-forest-green">KisanKart Admin</h1>
         <Input id="email" name="email" type="email" label="Email" required />

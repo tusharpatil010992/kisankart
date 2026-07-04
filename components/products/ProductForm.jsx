@@ -48,8 +48,8 @@ export default function ProductForm({ product, categories, action }) {
         label="Image URL"
         defaultValue={product?.image_url}
       />
-      <div className="flex flex-col gap-1">
-        <label htmlFor="category_id" className="text-sm font-medium text-foreground">
+      <div className="flex flex-col gap-1.5">
+        <label htmlFor="category_id" className="text-sm font-medium text-foreground/80">
           Category
         </label>
         <select
@@ -57,7 +57,7 @@ export default function ProductForm({ product, categories, action }) {
           name="category_id"
           defaultValue={product?.category_id}
           required
-          className="rounded-md border border-sage-green px-3 py-2 text-sm focus:border-forest-green focus:outline-none focus:ring-1 focus:ring-forest-green"
+          className="rounded-xl border border-slate-200 bg-white px-3.5 py-2.5 text-sm text-foreground transition-colors focus:border-forest-green focus:outline-none focus:ring-2 focus:ring-forest-green/20"
         >
           <option value="">Select a category</option>
           {categories.map((category) => (

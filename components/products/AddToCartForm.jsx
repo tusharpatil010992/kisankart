@@ -17,11 +17,11 @@ export default function AddToCartForm({ product }) {
 
   return (
     <div className="flex items-center gap-3">
-      <div className="flex items-center rounded-md border border-sage-green">
+      <div className="flex items-center rounded-xl border border-slate-200">
         <button
           type="button"
           onClick={() => setQuantity((q) => Math.max(1, q - 1))}
-          className="px-3 py-2 text-forest-green hover:bg-light-gray"
+          className="px-3 py-2 text-forest-green transition-colors hover:bg-sage-green/40"
         >
           −
         </button>
@@ -29,7 +29,7 @@ export default function AddToCartForm({ product }) {
         <button
           type="button"
           onClick={() => setQuantity((q) => q + 1)}
-          className="px-3 py-2 text-forest-green hover:bg-light-gray"
+          className="px-3 py-2 text-forest-green transition-colors hover:bg-sage-green/40"
         >
           +
         </button>

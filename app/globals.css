@@ -2,11 +2,13 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #333333;
-  --forest-green: #1b5e20;
-  --light-green: #81c784;
-  --sage-green: #a5d6a7;
-  --light-gray: #f5f5f5;
+  --foreground: #1e293b;
+  --forest-green: #15803d;
+  --light-green: #22c55e;
+  --sage-green: #bbf7d0;
+  --light-gray: #f8fafc;
+  --primary-50: #f0fdf4;
+  --primary-100: #dcfce7;
 }
 
 @theme inline {
@@ -16,10 +18,54 @@
   --color-light-green: var(--light-green);
   --color-sage-green: var(--sage-green);
   --color-light-gray: var(--light-gray);
-  --font-sans: var(--font-geist-sans);
+  --color-primary-50: var(--primary-50);
+  --color-primary-100: var(--primary-100);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-sora);
+}
+
+* {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
+  background: linear-gradient(160deg, #ffffff 0%, #ffffff 55%, rgba(187, 247, 208, 0.4) 100%);
   color: var(--foreground);
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+}
+
+::selection {
+  background: var(--sage-green);
+  color: var(--forest-green);
+}
+
+:focus-visible {
+  outline: 2px solid var(--forest-green);
+  outline-offset: 2px;
+}
+
+/* Gradient theme utilities: soft/medium fade from white for surfaces with
+   dark text; strong is a tonal green-on-green blend so white text keeps
+   contrast at every stop. */
+.bg-gradient-green-soft {
+  background-image: linear-gradient(135deg, #ffffff 0%, rgba(187, 247, 208, 0.45) 100%);
+}
+
+.bg-gradient-green-medium {
+  background-image: linear-gradient(135deg, #ffffff 0%, rgba(34, 197, 94, 0.16) 100%);
+}
+
+.bg-gradient-green-strong {
+  background-image: linear-gradient(135deg, var(--forest-green) 0%, #16a34a 100%);
 }
